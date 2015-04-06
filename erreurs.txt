@@ -1,0 +1,10 @@
+threads.c: In function ‘compteur_competence’:
+threads.c:23:3: warning: ISO C90 forbids mixed declarations and code [-pedantic]
+threads.c: In function ‘multijoueur’:
+threads.c:33:25: warning: unused parameter ‘arg’ [-Wunused-parameter]
+threads.c: In function ‘SDL_demander_joueur’:
+threads.c:47:1: warning: control reaches end of non-void function [-Wreturn-type]
+threads.c: In function ‘envoyer_predateur’:
+threads.c:45:1: warning: control reaches end of non-void function [-Wreturn-type]
+threads.c: In function ‘multijoueur’:
+threads.c:35:1: warning: control reaches end of non-void function [-Wreturn-type]

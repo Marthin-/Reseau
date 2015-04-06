@@ -1,0 +1,546 @@
+==11227== Memcheck, a memory error detector
+==11227== Copyright (C) 2002-2011, and GNU GPL'd, by Julian Seward et al.
+==11227== Using Valgrind-3.7.0 and LibVEX; rerun with -h for copyright info
+==11227== Command: ./exec
+==11227== 
+--11227-- Valgrind options:
+--11227--    --suppressions=/usr/lib/valgrind/debian-libc6-dbg.supp
+--11227--    --leak-check=full
+--11227--    -v
+--11227-- Contents of /proc/version:
+--11227--   Linux version 3.2.0-4-amd64 (debian-kernel@lists.debian.org) (gcc version 4.6.3 (Debian 4.6.3-14) ) #1 SMP Debian 3.2.65-1+deb7u2
+--11227-- Arch and hwcaps: AMD64, amd64-sse3-cx16
+--11227-- Page sizes: currently 4096, max supported 4096
+--11227-- Valgrind library directory: /usr/lib/valgrind
+--11227-- Reading syms from /home/marthin/Documents/Projet/projet_reseau/projet_res/exec (0x400000)
+--11227-- Reading syms from /lib/x86_64-linux-gnu/ld-2.13.so (0x4000000)
+--11227--   Considering /lib/x86_64-linux-gnu/ld-2.13.so ..
+--11227--   .. CRC mismatch (computed 12479f05 wanted 3b27f9dd)
+--11227--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.13.so ..
+--11227--   .. CRC is valid
+--11227-- Reading syms from /usr/lib/valgrind/memcheck-amd64-linux (0x38000000)
+--11227--   Considering /usr/lib/valgrind/memcheck-amd64-linux ..
+--11227--   .. CRC mismatch (computed 917e6694 wanted d604052d)
+--11227--   Considering /usr/lib/debug/usr/lib/valgrind/memcheck-amd64-linux ..
+--11227--   .. CRC is valid
+--11227--    object doesn't have a dynamic symbol table
+--11227-- Reading suppressions file: /usr/lib/valgrind/debian-libc6-dbg.supp
+--11227-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==11227== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-11227-by-marthin-on-???
+==11227== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-11227-by-marthin-on-???
+==11227== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-11227-by-marthin-on-???
+==11227== 
+==11227== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==11227== don't want to do, unless you know exactly what you're doing,
+==11227== or are doing some strange experiment):
+==11227==   /usr/lib/valgrind/../../bin/vgdb --pid=11227 ...command...
+==11227== 
+==11227== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==11227==   /path/to/gdb ./exec
+==11227== and then give GDB the following command
+==11227==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=11227
+==11227== --pid is optional if only one valgrind process is running
+==11227== 
+--11227-- REDIR: 0x40169d0 (strlen) redirected to 0x38061d67 (vgPlain_amd64_linux_REDIR_FOR_strlen)
+--11227-- Reading syms from /usr/lib/valgrind/vgpreload_core-amd64-linux.so (0x4a22000)
+--11227--   Considering /usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--11227--   .. CRC mismatch (computed 2439aefb wanted 12795d6b)
+--11227--   Considering /usr/lib/debug/usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--11227--   .. CRC is valid
+--11227-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so (0x4c24000)
+--11227--   Considering /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--11227--   .. CRC mismatch (computed 765bf264 wanted b7bd9c2d)
+--11227--   Considering /usr/lib/debug/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--11227--   .. CRC is valid
+--11227-- REDIR: 0x4016840 (index) redirected to 0x4c29180 (index)
+--11227-- REDIR: 0x40168c0 (strcmp) redirected to 0x4c2a0a0 (strcmp)
+--11227-- Reading syms from /usr/lib/x86_64-linux-gnu/libSDL_mixer-1.2.so.0.12.0 (0x4e2f000)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /usr/lib/x86_64-linux-gnu/libSDL_image-1.2.so.0.8.4 (0x507f000)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /usr/lib/x86_64-linux-gnu/libSDL_ttf-2.0.so.0.10.1 (0x529d000)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /usr/lib/x86_64-linux-gnu/libSDL-1.2.so.0.11.4 (0x54a4000)
+--11227--   Considering /usr/lib/debug/.build-id/11/471c4a46aca81d82ac33cd62622b5b31702cd4.debug ..
+--11227--   .. build-id is valid
+--11227-- Reading syms from /lib/x86_64-linux-gnu/libpthread-2.13.so (0x5740000)
+--11227--   Considering /lib/x86_64-linux-gnu/libpthread-2.13.so ..
+--11227--   .. CRC mismatch (computed e5e40290 wanted 8df396bc)
+--11227--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libpthread-2.13.so ..
+--11227--   .. CRC is valid
+--11227-- Reading syms from /lib/x86_64-linux-gnu/libc-2.13.so (0x595c000)
+--11227--   Considering /lib/x86_64-linux-gnu/libc-2.13.so ..
+--11227--   .. CRC mismatch (computed a647c898 wanted 882b2ada)
+--11227--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.13.so ..
+--11227--   .. CRC is valid
+--11227-- Reading syms from /usr/lib/x86_64-linux-gnu/libmikmod.so.2.0.4 (0x5ce7000)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /lib/x86_64-linux-gnu/libdl-2.13.so (0x5f3b000)
+--11227--   Considering /lib/x86_64-linux-gnu/libdl-2.13.so ..
+--11227--   .. CRC mismatch (computed 98235dc1 wanted 72c11600)
+--11227--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libdl-2.13.so ..
+--11227--   .. CRC is valid
+--11227-- Reading syms from /usr/lib/x86_64-linux-gnu/libvorbisfile.so.3.3.4 (0x613f000)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /usr/lib/x86_64-linux-gnu/libvorbis.so.0.4.5 (0x6348000)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /usr/lib/x86_64-linux-gnu/libFLAC.so.8.2.0 (0x6575000)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /usr/lib/libmad.so.0.2.1 (0x67c3000)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /lib/x86_64-linux-gnu/libm-2.13.so (0x69e2000)
+--11227--   Considering /lib/x86_64-linux-gnu/libm-2.13.so ..
+--11227--   .. CRC mismatch (computed 6b2119a9 wanted be67ca0f)
+--11227--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libm-2.13.so ..
+--11227--   .. CRC is valid
+--11227-- Reading syms from /lib/x86_64-linux-gnu/libpng12.so.0.49.0 (0x6c64000)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /usr/lib/x86_64-linux-gnu/libjpeg.so.8.4.0 (0x6e8b000)
+--11227--   Considering /usr/lib/x86_64-linux-gnu/libjpeg.so.8.4.0 ..
+--11227--   .. CRC mismatch (computed 839ef2f3 wanted be5bc76d)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /usr/lib/x86_64-linux-gnu/libtiff.so.4.3.6 (0x70c5000)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /lib/x86_64-linux-gnu/libz.so.1.2.7 (0x732b000)
+--11227--   Considering /lib/x86_64-linux-gnu/libz.so.1.2.7 ..
+--11227--   .. CRC mismatch (computed 57f46862 wanted 0646fc34)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /usr/lib/x86_64-linux-gnu/libwebp.so.2.0.0 (0x4042000)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /usr/lib/x86_64-linux-gnu/libfreetype.so.6.8.1 (0x7542000)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /usr/lib/x86_64-linux-gnu/libasound.so.2.0.0 (0x77e1000)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /usr/lib/x86_64-linux-gnu/libpulse-simple.so.0.0.3 (0x7ad5000)
+--11227--   Considering /usr/lib/x86_64-linux-gnu/libpulse-simple.so.0.0.3 ..
+--11227--   .. CRC mismatch (computed 59cbd9a5 wanted 22a1cd66)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /usr/lib/x86_64-linux-gnu/libpulse.so.0.14.2 (0x7cda000)
+--11227--   Considering /usr/lib/x86_64-linux-gnu/libpulse.so.0.14.2 ..
+--11227--   .. CRC mismatch (computed d380b399 wanted cd13d343)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0 (0x7f24000)
+--11227--   Considering /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0 ..
+--11227--   .. CRC mismatch (computed 0f3a3a58 wanted ec7baf21)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0 (0x825f000)
+--11227--   Considering /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0 ..
+--11227--   .. CRC mismatch (computed 9b3f1027 wanted 70df10a3)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /usr/lib/x86_64-linux-gnu/libdirectfb-1.2.so.9.0.1 (0x8471000)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /usr/lib/x86_64-linux-gnu/libfusion-1.2.so.9.0.1 (0x86f6000)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /usr/lib/x86_64-linux-gnu/libdirect-1.2.so.9.0.1 (0x8900000)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /usr/lib/x86_64-linux-gnu/libcaca.so.0.99.18 (0x4080000)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /usr/lib/x86_64-linux-gnu/libts-0.0.so.0.1.1 (0x8b18000)
+--11227--   Considering /usr/lib/x86_64-linux-gnu/libts-0.0.so.0.1.1 ..
+--11227--   .. CRC mismatch (computed 2a21cfdb wanted 9b7bc073)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /usr/lib/x86_64-linux-gnu/libogg.so.0.8.0 (0x8d1b000)
+--11227--   Considering /usr/lib/x86_64-linux-gnu/libogg.so.0.8.0 ..
+--11227--   .. CRC mismatch (computed 2a9f0af6 wanted 3848602d)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /usr/lib/x86_64-linux-gnu/libjbig.so.0.0.0 (0x8f21000)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /lib/x86_64-linux-gnu/librt-2.13.so (0x912f000)
+--11227--   Considering /lib/x86_64-linux-gnu/librt-2.13.so ..
+--11227--   .. CRC mismatch (computed de6c6735 wanted 7576e9e9)
+--11227--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/librt-2.13.so ..
+--11227--   .. CRC is valid
+--11227-- Reading syms from /usr/lib/x86_64-linux-gnu/pulseaudio/libpulsecommon-2.0.so (0x9337000)
+--11227--   Considering /usr/lib/x86_64-linux-gnu/pulseaudio/libpulsecommon-2.0.so ..
+--11227--   .. CRC mismatch (computed c90c0bc7 wanted d5d20d07)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /lib/x86_64-linux-gnu/libcap.so.2.22 (0x959a000)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /lib/x86_64-linux-gnu/libjson.so.0.1.0 (0x979e000)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /lib/x86_64-linux-gnu/libdbus-1.so.3.7.2 (0x99a8000)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0 (0x9bee000)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /lib/x86_64-linux-gnu/libslang.so.2.2.4 (0x9e0e000)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /lib/x86_64-linux-gnu/libncursesw.so.5.9 (0xa1a4000)
+--11227--   Considering /lib/x86_64-linux-gnu/libncursesw.so.5.9 ..
+--11227--   .. CRC mismatch (computed aa89a795 wanted 7233fb5e)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /lib/x86_64-linux-gnu/libtinfo.so.5.9 (0xa3d4000)
+--11227--   Considering /lib/x86_64-linux-gnu/libtinfo.so.5.9 ..
+--11227--   .. CRC mismatch (computed 15679dea wanted a971cf9d)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /usr/lib/x86_64-linux-gnu/libX11-xcb.so.1.0.0 (0xa5fd000)
+--11227--   Considering /usr/lib/x86_64-linux-gnu/libX11-xcb.so.1.0.0 ..
+--11227--   .. CRC mismatch (computed 1727a25b wanted 0e4d50c8)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /usr/lib/x86_64-linux-gnu/libICE.so.6.3.0 (0xa7fe000)
+--11227--   Considering /usr/lib/x86_64-linux-gnu/libICE.so.6.3.0 ..
+--11227--   .. CRC mismatch (computed fe2795ba wanted 4fd34042)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /usr/lib/x86_64-linux-gnu/libSM.so.6.0.1 (0xaa19000)
+--11227--   Considering /usr/lib/x86_64-linux-gnu/libSM.so.6.0.1 ..
+--11227--   .. CRC mismatch (computed 27743227 wanted c7b58103)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0 (0xac20000)
+--11227--   Considering /usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0 ..
+--11227--   .. CRC mismatch (computed 7af2f642 wanted 7c500f7e)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /lib/x86_64-linux-gnu/libwrap.so.0.7.6 (0xae25000)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /usr/lib/x86_64-linux-gnu/libsndfile.so.1.0.25 (0xb030000)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /usr/lib/x86_64-linux-gnu/libasyncns.so.0.3.1 (0xb297000)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /lib/x86_64-linux-gnu/libattr.so.1.1.0 (0xb49c000)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0 (0xb6a1000)
+--11227--   Considering /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0 ..
+--11227--   .. CRC mismatch (computed e86b3e46 wanted 75c26269)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0 (0xb8a4000)
+--11227--   Considering /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0 ..
+--11227--   .. CRC mismatch (computed 7cfb68c6 wanted 3087afd9)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /lib/x86_64-linux-gnu/libuuid.so.1.3.0 (0xbaa9000)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0 (0xbcae000)
+--11227--   Considering /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0 ..
+--11227--   .. CRC mismatch (computed 12be836e wanted c432f2d8)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /lib/x86_64-linux-gnu/libnsl-2.13.so (0xbebd000)
+--11227--   Considering /lib/x86_64-linux-gnu/libnsl-2.13.so ..
+--11227--   .. CRC mismatch (computed de3accd4 wanted 94604302)
+--11227--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libnsl-2.13.so ..
+--11227--   .. CRC is valid
+--11227-- Reading syms from /usr/lib/x86_64-linux-gnu/libvorbisenc.so.2.0.8 (0xc0d5000)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /lib/x86_64-linux-gnu/libresolv-2.13.so (0xc5a4000)
+--11227--   Considering /lib/x86_64-linux-gnu/libresolv-2.13.so ..
+--11227--   .. CRC mismatch (computed ccf41bed wanted da768719)
+--11227--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libresolv-2.13.so ..
+--11227--   .. CRC is valid
+--11227-- REDIR: 0x59da300 (strcmp) redirected to 0x4a22750 (_vgnU_ifunc_wrapper)
+--11227-- REDIR: 0x59e4190 (memcpy) redirected to 0x4a22750 (_vgnU_ifunc_wrapper)
+--11227-- REDIR: 0x59db790 (strcpy) redirected to 0x4a22750 (_vgnU_ifunc_wrapper)
+--11227-- REDIR: 0x59dbd40 (strlen) redirected to 0x4a22750 (_vgnU_ifunc_wrapper)
+--11227-- REDIR: 0x59de600 (memset) redirected to 0x4a22750 (_vgnU_ifunc_wrapper)
+--11227-- REDIR: 0x59ddfe0 (bcmp) redirected to 0x4a22750 (_vgnU_ifunc_wrapper)
+--11227-- REDIR: 0x59e5530 (rawmemchr) redirected to 0x4a22750 (_vgnU_ifunc_wrapper)
+--11227-- REDIR: 0x59de410 (memmove) redirected to 0x4a22750 (_vgnU_ifunc_wrapper)
+--11227-- REDIR: 0x59df800 (strcasecmp) redirected to 0x4a22750 (_vgnU_ifunc_wrapper)
+--11227-- REDIR: 0x59e1ac0 (strncasecmp) redirected to 0x4a22750 (_vgnU_ifunc_wrapper)
+--11227-- REDIR: 0x59dd860 (__GI_strrchr) redirected to 0x4c28fa0 (__GI_strrchr)
+--11227-- REDIR: 0xffffffffff600400 (???) redirected to 0x38061d5d (vgPlain_amd64_linux_REDIR_FOR_vtime)
+--11227-- REDIR: 0x59d6a00 (malloc) redirected to 0x4c28b80 (malloc)
+--11230-- REDIR: 0xffffffffff600000 (???) redirected to 0x38061d53 (vgPlain_amd64_linux_REDIR_FOR_vgettimeofday)
+==11230== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-11230-by-marthin-on-???
+==11230== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-11230-by-marthin-on-???
+==11230== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-11230-by-marthin-on-???
+==11230== 
+==11230== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==11230== don't want to do, unless you know exactly what you're doing,
+==11230== or are doing some strange experiment):
+==11230==   /usr/lib/valgrind/../../bin/vgdb --pid=11230 ...command...
+==11230== 
+==11230== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==11230==   /path/to/gdb ./exec
+==11230== and then give GDB the following command
+==11230==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=11230
+==11230== --pid is optional if only one valgrind process is running
+==11230== 
+--11230-- REDIR: 0x59dbd80 (__GI_strlen) redirected to 0x4c29500 (__GI_strlen)
+--11227-- REDIR: 0x59e55b0 (strchrnul) redirected to 0x4c2b7d0 (strchrnul)
+--11230-- REDIR: 0x59d5f50 (calloc) redirected to 0x4c27200 (calloc)
+--11230-- REDIR: 0x59d6a00 (malloc) redirected to 0x4c28b80 (malloc)
+--11230-- REDIR: 0x59da340 (__GI_strcmp) redirected to 0x4c2a050 (__GI_strcmp)
+--11230-- REDIR: 0x59d6920 (free) redirected to 0x4c27ce0 (free)
+--11230-- REDIR: 0x5a768c0 (__strlen_sse42) redirected to 0x4c294e0 (strlen)
+--11230-- REDIR: 0x5a84b90 (__memcpy_ssse3_back) redirected to 0x4c2a620 (memcpy)
+--11230-- REDIR: 0x59dbfb0 (__GI_strncmp) redirected to 0x4c299d0 (__GI_strncmp)
+--11230-- REDIR: 0x59d7ae0 (realloc) redirected to 0x4c28c50 (realloc)
+--11230-- REDIR: 0x59e55b0 (strchrnul) redirected to 0x4c2b7d0 (strchrnul)
+--11230-- REDIR: 0x59ddf60 (memchr) redirected to 0x4c2a140 (memchr)
+--11230-- REDIR: 0x59dd830 (rindex) redirected to 0x4a22750 (_vgnU_ifunc_wrapper)
+--11230-- REDIR: 0x5a71190 (__strrchr_sse42) redirected to 0x4c28f70 (rindex)
+--11230-- REDIR: 0x5a49ef0 (__strcpy_chk) redirected to 0x4c2b840 (__strcpy_chk)
+--11230-- REDIR: 0x59de640 (__GI_memset) redirected to 0x4c2b490 (memset)
+--11230-- REDIR: 0x59dbf70 (strncmp) redirected to 0x4a22750 (_vgnU_ifunc_wrapper)
+--11230-- REDIR: 0x5a6ffd0 (__strncmp_sse42) redirected to 0x4c29960 (strncmp)
+--11230-- REDIR: 0x5a912f0 (__memcmp_sse4_1) redirected to 0x4c2b0b0 (bcmp)
+--11230-- REDIR: 0x5a8a130 (__memmove_ssse3_back) redirected to 0x4c2b530 (memmove)
+--11230-- REDIR: 0x59df150 (mempcpy) redirected to 0x4a22750 (_vgnU_ifunc_wrapper)
+--11230-- REDIR: 0x5a87660 (__mempcpy_ssse3_back) redirected to 0x4c2b8e0 (mempcpy)
+--11230-- REDIR: 0x59df6b0 (__GI_stpcpy) redirected to 0x4c2b220 (__GI_stpcpy)
+--11230-- REDIR: 0x59da280 (__GI_strchr) redirected to 0x4c29080 (__GI_strchr)
+==11231== Warning: invalid file descriptor 1024 in syscall close()
+==11231==    at 0x574E240: __close_nocancel (syscall-template.S:82)
+==11231==    by 0x9354146: pa_close (in /usr/lib/x86_64-linux-gnu/pulseaudio/libpulsecommon-2.0.so)
+==11231==    by 0x9357120: pa_close_allv (in /usr/lib/x86_64-linux-gnu/pulseaudio/libpulsecommon-2.0.so)
+==11231==    by 0x9357321: pa_close_all (in /usr/lib/x86_64-linux-gnu/pulseaudio/libpulsecommon-2.0.so)
+==11231==    by 0x7CEAA44: ??? (in /usr/lib/x86_64-linux-gnu/libpulse.so.0.14.2)
+==11231==    by 0x7CEADBA: ??? (in /usr/lib/x86_64-linux-gnu/libpulse.so.0.14.2)
+==11231==    by 0x7CEB682: pa_context_connect (in /usr/lib/x86_64-linux-gnu/libpulse.so.0.14.2)
+==11231==    by 0x7AD6D22: pa_simple_new (in /usr/lib/x86_64-linux-gnu/libpulse-simple.so.0.0.3)
+==11231==    by 0x54DE633: Audio_Available (in /usr/lib/x86_64-linux-gnu/libSDL-1.2.so.0.11.4)
+==11231==    by 0x54B19B1: SDL_AudioInit (in /usr/lib/x86_64-linux-gnu/libSDL-1.2.so.0.11.4)
+==11231==    by 0x54B067B: SDL_InitSubSystem (in /usr/lib/x86_64-linux-gnu/libSDL-1.2.so.0.11.4)
+==11231==    by 0x54B1791: SDL_OpenAudio (in /usr/lib/x86_64-linux-gnu/libSDL-1.2.so.0.11.4)
+--11231-- REDIR: 0x59ddc90 (strspn) redirected to 0x4a22750 (_vgnU_ifunc_wrapper)
+--11231-- REDIR: 0x5a76bd0 (__strspn_sse42) redirected to 0x4c2bd30 (strspn)
+--11231-- REDIR: 0x59db8a0 (strcspn) redirected to 0x4a22750 (_vgnU_ifunc_wrapper)
+--11231-- REDIR: 0x5a76960 (__strcspn_sse42) redirected to 0x4c2bcc0 (strcspn)
+==11231== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-11231-by-marthin-on-???
+==11231== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-11231-by-marthin-on-???
+==11231== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-11231-by-marthin-on-???
+==11231== 
+==11231== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==11231== don't want to do, unless you know exactly what you're doing,
+==11231== or are doing some strange experiment):
+==11231==   /usr/lib/valgrind/../../bin/vgdb --pid=11231 ...command...
+==11231== 
+==11231== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==11231==   /path/to/gdb ./exec
+==11231== and then give GDB the following command
+==11231==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=11231
+==11231== --pid is optional if only one valgrind process is running
+==11231== 
+==11231== 
+==11231== HEAP SUMMARY:
+==11231==     in use at exit: 23,309 bytes in 30 blocks
+==11231==   total heap usage: 140 allocs, 110 frees, 178,956 bytes allocated
+==11231== 
+==11231== Searching for pointers to 30 not-freed blocks
+==11231== Checked 68,647,888 bytes
+==11231== 
+==11231== LEAK SUMMARY:
+==11231==    definitely lost: 0 bytes in 0 blocks
+==11231==    indirectly lost: 0 bytes in 0 blocks
+==11231==      possibly lost: 0 bytes in 0 blocks
+==11231==    still reachable: 23,309 bytes in 30 blocks
+==11231==         suppressed: 0 bytes in 0 blocks
+==11231== Reachable blocks (those to which a pointer was found) are not shown.
+==11231== To see them, rerun with: --leak-check=full --show-reachable=yes
+==11231== 
+==11231== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 6 from 6)
+--11231-- 
+--11231-- used_suppression:      6 dl-hack3-cond-1
+==11231== 
+==11231== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 6 from 6)
+--11230-- REDIR: 0x5a6f130 (__strcmp_sse42) redirected to 0x4c2a000 (strcmp)
+--11230-- REDIR: 0x59e5560 (__GI___rawmemchr) redirected to 0x4c2b820 (__GI___rawmemchr)
+--11230-- REDIR: 0x59da250 (index) redirected to 0x4a22750 (_vgnU_ifunc_wrapper)
+--11230-- REDIR: 0x5a6f080 (__strchr_sse42) redirected to 0x4c29040 (index)
+--11230-- REDIR: 0x5a76d00 (???) redirected to 0x4c29520 (strcpy)
+--11230-- REDIR: 0x59da090 (strcat) redirected to 0x4c291c0 (strcat)
+--11230-- REDIR: 0x5a719b0 (__strcasecmp_sse42) redirected to 0x4c29a40 (strcasecmp)
+--11230-- REDIR: 0x5a49aa0 (__memcpy_chk) redirected to 0x4a22750 (_vgnU_ifunc_wrapper)
+--11230-- REDIR: 0x5a84b80 (__memcpy_chk_ssse3_back) redirected to 0x4c2bac0 (__memcpy_chk)
+--11230-- REDIR: 0x5a73650 (__strncasecmp_sse42) redirected to 0x4c29b20 (strncasecmp)
+--11230-- Reading syms from /lib/x86_64-linux-gnu/libnss_compat-2.13.so (0xcbba000)
+--11230--   Considering /lib/x86_64-linux-gnu/libnss_compat-2.13.so ..
+--11230--   .. CRC mismatch (computed c8612f6c wanted e2af0072)
+--11230--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libnss_compat-2.13.so ..
+--11230--   .. CRC is valid
+--11230-- REDIR: 0x59db7c0 (__GI_strcpy) redirected to 0x4c295f0 (__GI_strcpy)
+--11230-- Reading syms from /lib/x86_64-linux-gnu/libnss_nis-2.13.so (0xcdc2000)
+--11230--   Considering /lib/x86_64-linux-gnu/libnss_nis-2.13.so ..
+--11230--   .. CRC mismatch (computed cbe5e0fb wanted 67367533)
+--11230--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libnss_nis-2.13.so ..
+--11230--   .. CRC is valid
+--11230-- Reading syms from /lib/x86_64-linux-gnu/libnss_files-2.13.so (0xcfcd000)
+--11230--   Considering /lib/x86_64-linux-gnu/libnss_files-2.13.so ..
+--11230--   .. CRC mismatch (computed 86e5f6f9 wanted 42e8d20f)
+--11230--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libnss_files-2.13.so ..
+--11230--   .. CRC is valid
+--11230-- REDIR: 0x59dd800 (strncpy) redirected to 0x4a22750 (_vgnU_ifunc_wrapper)
+--11230-- REDIR: 0x5a77720 (???) redirected to 0x4c296c0 (strncpy)
+--11227-- REDIR: 0x59dbd80 (__GI_strlen) redirected to 0x4c29500 (__GI_strlen)
+--11227-- REDIR: 0x59d7ae0 (realloc) redirected to 0x4c28c50 (realloc)
+--11227-- REDIR: 0x5a76d00 (???) redirected to 0x4c29520 (strcpy)
+--11227-- REDIR: 0x59d5f50 (calloc) redirected to 0x4c27200 (calloc)
+--11227-- REDIR: 0x59d6920 (free) redirected to 0x4c27ce0 (free)
+--11227-- REDIR: 0x59dd830 (rindex) redirected to 0x4a22750 (_vgnU_ifunc_wrapper)
+--11227-- REDIR: 0x5a71190 (__strrchr_sse42) redirected to 0x4c28f70 (rindex)
+--11227-- REDIR: 0x5a912f0 (__memcmp_sse4_1) redirected to 0x4c2b0b0 (bcmp)
+--11227-- REDIR: 0x59de640 (__GI_memset) redirected to 0x4c2b490 (memset)
+==11230== Thread 2:
+==11230== Source and destination overlap in memcpy(0xc8bfde0, 0xc8bfde0, 8192)
+==11230==    at 0x4C2A690: memcpy (mc_replace_strmem.c:838)
+==11230==    by 0x78363EA: snd_pcm_area_copy (in /usr/lib/x86_64-linux-gnu/libasound.so.2.0.0)
+==11230==    by 0x78365AB: snd_pcm_areas_copy (in /usr/lib/x86_64-linux-gnu/libasound.so.2.0.0)
+==11230==    by 0x787414C: ??? (in /usr/lib/x86_64-linux-gnu/libasound.so.2.0.0)
+==11230==    by 0x7846779: ??? (in /usr/lib/x86_64-linux-gnu/libasound.so.2.0.0)
+==11230==    by 0x78509CA: ??? (in /usr/lib/x86_64-linux-gnu/libasound.so.2.0.0)
+==11230==    by 0x7850AA1: ??? (in /usr/lib/x86_64-linux-gnu/libasound.so.2.0.0)
+==11230==    by 0x7850B7B: ??? (in /usr/lib/x86_64-linux-gnu/libasound.so.2.0.0)
+==11230==    by 0x78441FC: ??? (in /usr/lib/x86_64-linux-gnu/libasound.so.2.0.0)
+==11230==    by 0x7839D97: ??? (in /usr/lib/x86_64-linux-gnu/libasound.so.2.0.0)
+==11230==    by 0x78444C1: snd_pcm_mmap_writei (in /usr/lib/x86_64-linux-gnu/libasound.so.2.0.0)
+==11230==    by 0x54DD313: ALSA_PlayAudio (in /usr/lib/x86_64-linux-gnu/libSDL-1.2.so.0.11.4)
+==11230== 
+--11227-- REDIR: 0x5a84b90 (__memcpy_ssse3_back) redirected to 0x4c2a620 (memcpy)
+--11227-- REDIR: 0xffffffffff600000 (???) redirected to 0x38061d53 (vgPlain_amd64_linux_REDIR_FOR_vgettimeofday)
+--11227-- REDIR: 0x59dbfb0 (__GI_strncmp) redirected to 0x4c299d0 (__GI_strncmp)
+--11227-- REDIR: 0x5a49ef0 (__strcpy_chk) redirected to 0x4c2b840 (__strcpy_chk)
+--11227-- REDIR: 0x59dbf70 (strncmp) redirected to 0x4a22750 (_vgnU_ifunc_wrapper)
+--11227-- REDIR: 0x5a6ffd0 (__strncmp_sse42) redirected to 0x4c29960 (strncmp)
+--11227-- REDIR: 0x5a8a130 (__memmove_ssse3_back) redirected to 0x4c2b530 (memmove)
+--11227-- REDIR: 0x59dd800 (strncpy) redirected to 0x4a22750 (_vgnU_ifunc_wrapper)
+--11227-- REDIR: 0x5a77720 (???) redirected to 0x4c296c0 (strncpy)
+--11227-- REDIR: 0x5a768c0 (__strlen_sse42) redirected to 0x4c294e0 (strlen)
+--11227-- REDIR: 0x59e9350 (strstr) redirected to 0x4a22750 (_vgnU_ifunc_wrapper)
+--11227-- REDIR: 0x5a71330 (__strstr_sse42) redirected to 0x4c2bbd0 (strstr)
+--11227-- REDIR: 0x59da250 (index) redirected to 0x4a22750 (_vgnU_ifunc_wrapper)
+--11227-- REDIR: 0x5a6f080 (__strchr_sse42) redirected to 0x4c29040 (index)
+ALSA lib pcm.c:7339:(snd_pcm_recover) underrun occurred
+--11227-- REDIR: 0x59ddf60 (memchr) redirected to 0x4c2a140 (memchr)
+--11227-- REDIR: 0x5a6f130 (__strcmp_sse42) redirected to 0x4c2a000 (strcmp)
+--11227-- REDIR: 0x59da340 (__GI_strcmp) redirected to 0x4c2a050 (__GI_strcmp)
+--11227-- REDIR: 0x59da280 (__GI_strchr) redirected to 0x4c29080 (__GI_strchr)
+--11230-- REDIR: 0x59e9350 (strstr) redirected to 0x4a22750 (_vgnU_ifunc_wrapper)
+--11230-- REDIR: 0x5a71330 (__strstr_sse42) redirected to 0x4c2bbd0 (strstr)
+--11227-- REDIR: 0x59df680 (stpcpy) redirected to 0x4a22750 (_vgnU_ifunc_wrapper)
+--11227-- REDIR: 0x5a786a0 (???) redirected to 0x4c2b150 (stpcpy)
+ALSA lib pcm.c:7339:(snd_pcm_recover) underrun occurred
+ALSA lib pcm.c:7339:(snd_pcm_recover) underrun occurred
+ALSA lib pcm.c:7339:(snd_pcm_recover) underrun occurred
+--11230-- REDIR: 0x59df680 (stpcpy) redirected to 0x4a22750 (_vgnU_ifunc_wrapper)
+--11230-- REDIR: 0x5a786a0 (???) redirected to 0x4c2b150 (stpcpy)
+--11227-- Reading syms from /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2 (0xcd31000)
+--11227--   Considering /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2 ..
+--11227--   .. CRC mismatch (computed b9b95b4a wanted e8e844a1)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0 (0xcf3b000)
+--11227--   Considering /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0 ..
+--11227--   .. CRC mismatch (computed 355b1e27 wanted 981a4507)
+--11227--    object doesn't have a symbol table
+--11227-- Reading syms from /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0 (0xd144000)
+--11227--    object doesn't have a symbol table
+ALSA lib pcm.c:7339:(snd_pcm_recover) underrun occurred
+--11230-- Reading syms from /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2 (0xdf51000)
+--11230--   Considering /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2 ..
+--11230--   .. CRC mismatch (computed b9b95b4a wanted e8e844a1)
+--11230--    object doesn't have a symbol table
+--11230-- Reading syms from /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0 (0xe15b000)
+--11230--   Considering /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0 ..
+--11230--   .. CRC mismatch (computed 355b1e27 wanted 981a4507)
+--11230--    object doesn't have a symbol table
+--11230-- Reading syms from /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0 (0xe364000)
+--11230--    object doesn't have a symbol table
+ALSA lib pcm.c:7339:(snd_pcm_recover) underrun occurred
+==11227== Thread 2:
+==11227== Jump to the invalid address stated on the next line
+==11227==    at 0x0: ???
+==11227==    by 0x5746B4F: start_thread (pthread_create.c:304)
+==11227==    by 0x5A3795C: clone (clone.S:112)
+==11227==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==11227== 
+==11227== 
+==11227== Process terminating with default action of signal 11 (SIGSEGV)
+==11227==  Bad permissions for mapped region at address 0x0
+==11227==    at 0x0: ???
+==11227==    by 0x5746B4F: start_thread (pthread_create.c:304)
+==11227==    by 0x5A3795C: clone (clone.S:112)
+==11227== 
+==11227== HEAP SUMMARY:
+==11227==     in use at exit: 224,818 bytes in 750 blocks
+==11227==   total heap usage: 13,948 allocs, 13,198 frees, 3,148,798 bytes allocated
+==11227== 
+==11227== Searching for pointers to 750 not-freed blocks
+==11227== Checked 18,506,712 bytes
+==11227== 
+==11227== Thread 1:
+==11227== 1 bytes in 1 blocks are definitely lost in loss record 1 of 251
+==11227==    at 0x4C28BED: malloc (vg_replace_malloc.c:263)
+==11227==    by 0x7F84325: _XlcDefaultMapModifiers (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==11227==    by 0x7F84715: XSetLocaleModifiers (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==11227==    by 0x54E5F7B: create_aux_windows (in /usr/lib/x86_64-linux-gnu/libSDL-1.2.so.0.11.4)
+==11227==    by 0x54E6D00: X11_VideoInit (in /usr/lib/x86_64-linux-gnu/libSDL-1.2.so.0.11.4)
+==11227==    by 0x54D715A: SDL_VideoInit (in /usr/lib/x86_64-linux-gnu/libSDL-1.2.so.0.11.4)
+==11227==    by 0x54B064B: SDL_InitSubSystem (in /usr/lib/x86_64-linux-gnu/libSDL-1.2.so.0.11.4)
+==11227==    by 0x54B06CB: SDL_Init (in /usr/lib/x86_64-linux-gnu/libSDL-1.2.so.0.11.4)
+==11227==    by 0x406C31: creation_SDL (affichage.c:64)
+==11227==    by 0x4016E1: main (main2.c:173)
+==11227== 
+==11227== 10 bytes in 2 blocks are definitely lost in loss record 19 of 251
+==11227==    at 0x4C28BED: malloc (vg_replace_malloc.c:263)
+==11227==    by 0x59DBAB1: strdup (strdup.c:43)
+==11227==    by 0x7F927A5: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==11227==    by 0x7F936E4: _XimSetICValueData (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==11227==    by 0x7F8ED6D: _XimLocalCreateIC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==11227==    by 0x7F757B2: XCreateIC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==11227==    by 0x54E5DCC: create_aux_windows (in /usr/lib/x86_64-linux-gnu/libSDL-1.2.so.0.11.4)
+==11227==    by 0x54E6D00: X11_VideoInit (in /usr/lib/x86_64-linux-gnu/libSDL-1.2.so.0.11.4)
+==11227==    by 0x54D715A: SDL_VideoInit (in /usr/lib/x86_64-linux-gnu/libSDL-1.2.so.0.11.4)
+==11227==    by 0x54B064B: SDL_InitSubSystem (in /usr/lib/x86_64-linux-gnu/libSDL-1.2.so.0.11.4)
+==11227==    by 0x54B06CB: SDL_Init (in /usr/lib/x86_64-linux-gnu/libSDL-1.2.so.0.11.4)
+==11227==    by 0x406C31: creation_SDL (affichage.c:64)
+==11227== 
+==11227== 192 (16 direct, 176 indirect) bytes in 1 blocks are definitely lost in loss record 191 of 251
+==11227==    at 0x4C28CCE: realloc (vg_replace_malloc.c:632)
+==11227==    by 0x7F7B04E: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==11227==    by 0x7F7B4CF: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==11227==    by 0x7F7CBA4: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==11227==    by 0x7F7D335: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==11227==    by 0x7F9972F: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==11227==    by 0x7F84555: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==11227==    by 0x7F84697: _XlcCurrentLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==11227==    by 0x7F846ED: XSetLocaleModifiers (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==11227==    by 0x54E5F2B: create_aux_windows (in /usr/lib/x86_64-linux-gnu/libSDL-1.2.so.0.11.4)
+==11227==    by 0x54E6D00: X11_VideoInit (in /usr/lib/x86_64-linux-gnu/libSDL-1.2.so.0.11.4)
+==11227==    by 0x54D715A: SDL_VideoInit (in /usr/lib/x86_64-linux-gnu/libSDL-1.2.so.0.11.4)
+==11227== 
+==11227== 288 bytes in 1 blocks are possibly lost in loss record 211 of 251
+==11227==    at 0x4C272B8: calloc (vg_replace_malloc.c:566)
+==11227==    by 0x401128E: _dl_allocate_tls (dl-tls.c:297)
+==11227==    by 0x57474ED: pthread_create@@GLIBC_2.2.5 (allocatestack.c:585)
+==11227==    by 0x4021C7: lancement_threads (main2.c:42)
+==11227==    by 0x40172A: main (main2.c:180)
+==11227== 
+==11227== 288 bytes in 1 blocks are possibly lost in loss record 212 of 251
+==11227==    at 0x4C272B8: calloc (vg_replace_malloc.c:566)
+==11227==    by 0x401128E: _dl_allocate_tls (dl-tls.c:297)
+==11227==    by 0x57474ED: pthread_create@@GLIBC_2.2.5 (allocatestack.c:585)
+==11227==    by 0x4021DF: lancement_threads (main2.c:43)
+==11227==    by 0x40172A: main (main2.c:180)
+==11227== 
+==11227== 1,688 (136 direct, 1,552 indirect) bytes in 1 blocks are definitely lost in loss record 233 of 251
+==11227==    at 0x4C28CCE: realloc (vg_replace_malloc.c:632)
+==11227==    by 0x7F7B04E: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==11227==    by 0x7F7B4CF: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==11227==    by 0x7F7CBA4: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==11227==    by 0x7F7D335: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==11227==    by 0x7F9D62F: _XlcUtf8Loader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==11227==    by 0x7F84555: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==11227==    by 0x7F84697: _XlcCurrentLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==11227==    by 0x7F846ED: XSetLocaleModifiers (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==11227==    by 0x54E5F7B: create_aux_windows (in /usr/lib/x86_64-linux-gnu/libSDL-1.2.so.0.11.4)
+==11227==    by 0x54E6D00: X11_VideoInit (in /usr/lib/x86_64-linux-gnu/libSDL-1.2.so.0.11.4)
+==11227==    by 0x54D715A: SDL_VideoInit (in /usr/lib/x86_64-linux-gnu/libSDL-1.2.so.0.11.4)
+==11227== 
+==11227== LEAK SUMMARY:
+==11227==    definitely lost: 163 bytes in 5 blocks
+==11227==    indirectly lost: 1,728 bytes in 38 blocks
+==11227==      possibly lost: 576 bytes in 2 blocks
+==11227==    still reachable: 222,351 bytes in 705 blocks
+==11227==         suppressed: 0 bytes in 0 blocks
+==11227== Reachable blocks (those to which a pointer was found) are not shown.
+==11227== To see them, rerun with: --leak-check=full --show-reachable=yes
+==11227== 
+==11227== ERROR SUMMARY: 8 errors from 7 contexts (suppressed: 6 from 6)
+==11227== 
+==11227== 2 errors in context 1 of 7:
+==11227== Thread 2:
+==11227== Jump to the invalid address stated on the next line
+==11227==    at 0x0: ???
+==11227==    by 0x5746B4F: start_thread (pthread_create.c:304)
+==11227==    by 0x5A3795C: clone (clone.S:112)
+==11227==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==11227== 
+--11227-- 
+--11227-- used_suppression:      6 dl-hack3-cond-1
+==11227== 
+==11227== ERROR SUMMARY: 8 errors from 7 contexts (suppressed: 6 from 6)

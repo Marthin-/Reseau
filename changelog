@@ -1,0 +1,12 @@
+changed Actions_multi.c : ajout fonction envoi predateur
+changed main2.c : -ajout touche envoi predateur
+									-début thread compteur_competence
+changed threads.c : fonction compteur_compétences
+										fonction "serveur" (reçoit les informations des autres joueurs)
+
+TODO : fonction envoi de predateur (SDL)
+envois/reception map (stockage de la map actuelle)
+fonction pêche chez les autres joueurs
+gestion xp equilibrage
+finir les threads communication et gestion temps ==> voir avec Remi
+mettre à jour le Makefile
